@@ -1,0 +1,16 @@
+
+pluginManagement{
+    repositories{
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven {
+            url "https://repo.eclipse.org/content/repositories/paho-snapshots/"
+            url "https://jitpack.io"
+        }
+    }
+}
+
+include ':app', ':Chart'
+project(':Chart').projectDir = new File('libs/Chart')
+

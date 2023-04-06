@@ -1,0 +1,1026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.HomeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="2dp"
+                    android:gravity="left"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="282dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/dmsans"
+                        android:text="Welcome \nHome, Duc Huy"
+                        android:textColor="@color/colorMain"
+                        android:textFontWeight="600"
+                        android:textSize="25dp" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/profile" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="0dp"
+                android:gravity="left"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:fontFamily="@font/dmsans"
+                    android:paddingLeft="10dp"
+                    android:text="Rooms"
+                    android:textColor="@color/colorMain"
+                    android:textFontWeight="600"
+                    android:textSize="20dp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+                <include layout="@layout/fragment_tab_bar" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:gravity="center" />
+        </LinearLayout>
+
+
+        <!--                </LinearLayout>-->
+
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="20dp"-->
+        <!--                android:gravity="center"-->
+        <!--                android:orientation="horizontal">-->
+
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="150dp"-->
+        <!--                    android:layout_height="60dp"-->
+        <!--                    android:background="@drawable/rectangle_btn_menu"-->
+        <!--                    android:gravity="center"-->
+        <!--                    android:orientation="horizontal"-->
+        <!--                    android:visibility="visible">-->
+
+        <!--                    <ImageView-->
+        <!--                        android:layout_width="29dp"-->
+        <!--                        android:layout_height="40dp"-->
+        <!--                        android:paddingRight="5dp"-->
+        <!--                        android:src="@drawable/temperature" />-->
+
+        <!--                    <LinearLayout-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:layout_marginLeft="10dp"-->
+        <!--                        android:gravity="center"-->
+        <!--                        android:orientation="vertical">-->
+
+        <!--                        <TextView-->
+        <!--                            android:id="@+id/temp"-->
+        <!--                            android:layout_width="wrap_content"-->
+        <!--                            android:layout_height="wrap_content"-->
+        <!--                            android:fontFamily="@font/dmsans"-->
+        <!--                            android:text="30°C"-->
+        <!--                            android:textColor="@color/colorMain"-->
+        <!--                            android:textFontWeight="700"-->
+        <!--                            android:textSize="21dp" />-->
+
+        <!--                        <TextView-->
+        <!--                            android:layout_width="wrap_content"-->
+        <!--                            android:layout_height="wrap_content"-->
+        <!--                            android:fontFamily="@font/dmsans"-->
+        <!--                            android:text="Temperature"-->
+        <!--                            android:textColor="@color/colorMain"-->
+        <!--                            android:textFontWeight="400"-->
+        <!--                            android:textSize="12dp" />-->
+
+        <!--                    </LinearLayout>-->
+        <!--                </LinearLayout>-->
+
+        <!--                <LinearLayout-->
+        <!--                    android:layout_width="150dp"-->
+        <!--                    android:layout_height="60dp"-->
+        <!--                    android:layout_marginLeft="40dp"-->
+        <!--                    android:background="@drawable/rectangle_btn_menu"-->
+        <!--                    android:gravity="center"-->
+        <!--                    android:orientation="horizontal"-->
+        <!--                    android:visibility="visible">-->
+
+        <!--                    <ImageView-->
+        <!--                        android:layout_width="48dp"-->
+        <!--                        android:layout_height="48dp"-->
+        <!--                        android:src="@drawable/humidity" />-->
+
+        <!--                    <LinearLayout-->
+        <!--                        android:layout_width="wrap_content"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:layout_marginLeft="10dp"-->
+        <!--                        android:gravity="center"-->
+        <!--                        android:orientation="vertical">-->
+
+        <!--                        <TextView-->
+        <!--                            android:id="@+id/humidity"-->
+        <!--                            android:layout_width="wrap_content"-->
+        <!--                            android:layout_height="wrap_content"-->
+        <!--                            android:fontFamily="@font/dmsans"-->
+        <!--                            android:text="71%"-->
+        <!--                            android:textColor="@color/colorMain"-->
+        <!--                            android:textFontWeight="700"-->
+        <!--                            android:textSize="21dp" />-->
+
+        <!--                        <TextView-->
+        <!--                            android:layout_width="wrap_content"-->
+        <!--                            android:layout_height="wrap_content"-->
+        <!--                            android:fontFamily="@font/dmsans"-->
+        <!--                            android:text="Humidity"-->
+        <!--                            android:textColor="@color/colorMain"-->
+        <!--                            android:textFontWeight="400"-->
+        <!--                            android:textSize="12dp" />-->
+
+        <!--                    </LinearLayout>-->
+        <!--                </LinearLayout>-->
+
+        <!--            </LinearLayout>-->
+
+        <!--                <ScrollView-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="match_parent">-->
+
+        <!--                    <LinearLayout-->
+        <!--                        android:layout_width="match_parent"-->
+        <!--                        android:layout_height="match_parent"-->
+        <!--                        android:layout_marginTop="20dp"-->
+        <!--                        android:layout_marginBottom="15dp"-->
+        <!--                        android:background="@drawable/background_solid_curb"-->
+        <!--                        android:orientation="vertical">-->
+
+        <!--                        &lt;!&ndash;                        setup whether value&ndash;&gt;-->
+        <!--&lt;!&ndash;                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                            android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                            android:layout_height="160dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                            android:orientation="vertical">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                            <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                android:layout_height="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                android:layout_marginLeft="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                android:orientation="horizontal">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                <ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_width="25dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_height="25dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_marginTop="25dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:src="@drawable/ic_snow" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:fontFamily="@font/dmsans"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:text="30"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:textSize="100px"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:textStyle="bold" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_marginTop="20dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:text="O"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:textSize="20dp" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_marginTop="30dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:text="C"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:textSize="30dp" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_height="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:orientation="vertical">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:orientation="horizontal">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/fahren"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_marginTop="7dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:fontFamily="@font/raleway"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:text="00"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textSize="20dp" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_marginLeft="5dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:text="O"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textSize="10dp" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_marginLeft="2dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_marginTop="7dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:text="F"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textSize="20dp" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_marginLeft="25dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_marginTop="10dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:orientation="vertical">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:fontFamily="@font/raleway"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:text="Humidity"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textSize="20dp" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_marginTop="3dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:orientation="horizontal">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_width="20dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_height="20dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:src="@drawable/ic_humidity" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:text="60%"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:fontFamily="@font/raleway"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textSize="18dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_marginLeft="10dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            />&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/day_value"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_marginTop="6dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:fontFamily="@font/raleway"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:text="Day"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textSize="21dp" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/mounth_value"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:fontFamily="@font/raleway"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:text="Mounth"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:textSize="15dp" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:id="@+id/recv"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:text=""&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:textSize="15dp" />&ndash;&gt;-->
+        <!--&lt;!&ndash;                            </LinearLayout>&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash;                        </LinearLayout>&ndash;&gt;-->
+
+        <!--                        <LinearLayout-->
+        <!--                            android:layout_width="match_parent"-->
+        <!--                            android:layout_height="match_parent"-->
+        <!--                            android:background="@drawable/background_white_curb"-->
+        <!--                            android:orientation="vertical"-->
+        <!--                            android:paddingBottom="15dp">-->
+
+        <!--&lt;!&ndash;                            <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                android:layout_height="80dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                android:orientation="vertical">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                    android:orientation="horizontal">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_width="30dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_height="wrap_content" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:orientation="horizontal">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/notification_off"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:background="@drawable/rectangle_btn_menu"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:orientation="vertical"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:visibility="visible">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_width="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_height="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:src="@drawable/ic_notifications_none_24" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/notification_on"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:background="@drawable/rectangle_solid"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:orientation="vertical"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:visibility="gone">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_width="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_height="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:src="@drawable/notification_white" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_marginLeft="10dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:orientation="horizontal">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/power_off"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:background="@drawable/rectangle_btn_menu"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:orientation="vertical"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:visibility="gone">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_width="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_height="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:src="@drawable/ic_power" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/power_on"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:background="@drawable/rectangle_solid"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:orientation="vertical"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:visibility="visible">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_width="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_height="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:src="@drawable/power_on" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_marginLeft="10dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:orientation="horizontal">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/ai_off"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:background="@drawable/rectangle_btn_menu"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:orientation="vertical"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:visibility="visible">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:text="AI"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:textColor="@color/colorAccent"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:textSize="18dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:textStyle="bold" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/ai_on"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:background="@drawable/rectangle_solid"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:orientation="vertical"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:visibility="gone">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <TextView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:text="AI"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:textColor="@color/colorPrimary"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:textSize="18dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:textStyle="bold" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_width="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_height="wrap_content"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:layout_marginLeft="10dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                        android:orientation="horizontal">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/sensor_off"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:background="@drawable/rectangle_btn_menu"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:orientation="vertical"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:visibility="visible">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_width="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_height="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:src="@drawable/ic_sensor" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:id="@+id/sensor_on"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_width="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:layout_height="60dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:background="@drawable/rectangle_solid"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:orientation="vertical"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                            android:visibility="gone">&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                            <ImageView&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_width="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:layout_height="40dp"&ndash;&gt;-->
+        <!--&lt;!&ndash;                                                android:src="@drawable/sensor_white" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                    </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                                </LinearLayout>&ndash;&gt;-->
+
+        <!--&lt;!&ndash;                            </LinearLayout>&ndash;&gt;-->
+
+
+        <!--                            <LinearLayout-->
+        <!--                                android:layout_width="match_parent"-->
+        <!--                                android:layout_height="0dp"-->
+        <!--                                android:layout_weight="1"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <LinearLayout-->
+        <!--                                    android:layout_width="0dp"-->
+        <!--                                    android:layout_height="match_parent"-->
+        <!--                                    android:layout_weight="1"-->
+        <!--                                    android:orientation="vertical">-->
+
+        <!--                                    <androidx.cardview.widget.CardView xmlns:Card_View="http://schemas.android.com/apk/res-auto"-->
+        <!--                                        android:layout_width="match_parent"-->
+        <!--                                        android:layout_height="210dp"-->
+        <!--                                        android:layout_margin="15dp"-->
+        <!--                                        Card_View:cardBackgroundColor="#FFFFFF"-->
+        <!--                                        Card_View:cardCornerRadius="15dp"-->
+        <!--                                        Card_View:cardElevation="2dp">-->
+
+        <!--                                        <LinearLayout-->
+        <!--                                            android:layout_width="match_parent"-->
+        <!--                                            android:layout_height="match_parent"-->
+        <!--                                            android:layout_marginLeft="6dp"-->
+        <!--                                            android:gravity="center"-->
+        <!--                                            android:orientation="vertical"-->
+        <!--                                            android:padding="10dp">-->
+
+        <!--                                            <ImageView-->
+        <!--                                                android:layout_width="40dp"-->
+        <!--                                                android:layout_height="40dp"-->
+        <!--                                                android:src="@drawable/ic_light" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:layout_width="wrap_content"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="15dp"-->
+        <!--                                                android:fontFamily="@font/raleway"-->
+        <!--                                                android:text="Light Bulb"-->
+        <!--                                                android:textColor="#000000"-->
+        <!--                                                android:textSize="17dp" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:id="@+id/light_text"-->
+        <!--                                                android:layout_width="match_parent"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="5dp"-->
+        <!--                                                android:gravity="center"-->
+        <!--                                                android:text="OFF"-->
+        <!--                                                android:textColor="@color/colorAccent"-->
+        <!--                                                android:textSize="14dp" />-->
+
+        <!--                                            <com.suke.widget.SwitchButton-->
+        <!--                                                android:id="@+id/switch_light"-->
+        <!--                                                android:layout_width="70dp"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="10dp" />-->
+
+        <!--                                        </LinearLayout>-->
+
+        <!--                                    </androidx.cardview.widget.CardView>-->
+
+        <!--                                </LinearLayout>-->
+
+        <!--                                <LinearLayout-->
+        <!--                                    android:layout_width="0dp"-->
+        <!--                                    android:layout_height="match_parent"-->
+        <!--                                    android:layout_weight="1"-->
+        <!--                                    android:orientation="vertical">-->
+
+        <!--                                    <androidx.cardview.widget.CardView xmlns:Card_View="http://schemas.android.com/apk/res-auto"-->
+        <!--                                        android:layout_width="match_parent"-->
+        <!--                                        android:layout_height="210dp"-->
+        <!--                                        android:layout_margin="15dp"-->
+        <!--                                        Card_View:cardBackgroundColor="#FFFFFF"-->
+        <!--                                        Card_View:cardCornerRadius="15dp"-->
+        <!--                                        Card_View:cardElevation="2dp">-->
+
+        <!--                                        <RelativeLayout-->
+        <!--                                            android:layout_width="match_parent"-->
+        <!--                                            android:layout_height="match_parent">-->
+
+        <!--                                            &lt;!&ndash;                                            app:wlv_progressValue="30"&ndash;&gt;-->
+
+        <!--                                            <LinearLayout-->
+        <!--                                                android:layout_width="match_parent"-->
+        <!--                                                android:layout_height="match_parent"-->
+        <!--                                                android:gravity="bottom"-->
+        <!--                                                android:orientation="vertical">-->
+
+        <!--                                                <me.itangqi.waveloadingview.WaveLoadingView-->
+        <!--                                                    android:id="@+id/waveLoadingView"-->
+        <!--                                                    android:layout_width="210dp"-->
+        <!--                                                    android:layout_height="210dp"-->
+        <!--                                                    app:wlv_borderColor="@android:color/white"-->
+        <!--                                                    app:wlv_progressValue="0"-->
+        <!--                                                    app:wlv_round_rectangle="true"-->
+        <!--                                                    app:wlv_shapeType="square"-->
+        <!--                                                    app:wlv_titleCenterColor="@android:color/white"-->
+        <!--                                                    app:wlv_titleCenterStrokeColor="@android:color/holo_blue_dark"-->
+        <!--                                                    app:wlv_triangle_direction="north"-->
+        <!--                                                    app:wlv_waveAmplitude="70"-->
+        <!--                                                    app:wlv_waveColor="@color/colorAccent" />-->
+
+        <!--                                            </LinearLayout>-->
+
+        <!--                                            <LinearLayout-->
+        <!--                                                android:layout_width="match_parent"-->
+        <!--                                                android:layout_height="match_parent"-->
+        <!--                                                android:layout_marginLeft="6dp"-->
+        <!--                                                android:gravity="center"-->
+        <!--                                                android:orientation="vertical"-->
+        <!--                                                android:padding="10dp">-->
+
+        <!--                                                <LinearLayout-->
+        <!--                                                    android:layout_width="match_parent"-->
+        <!--                                                    android:layout_height="wrap_content"-->
+        <!--                                                    android:layout_gravity="center"-->
+        <!--                                                    android:gravity="center"-->
+        <!--                                                    android:orientation="vertical">-->
+
+
+        <!--                                                    <jp.hamcheesedev.outlinedtextview.CompatOutlinedTextView-->
+        <!--                                                        android:layout_width="wrap_content"-->
+        <!--                                                        android:layout_height="wrap_content"-->
+        <!--                                                        android:fontFamily="@font/raleway"-->
+        <!--                                                        android:text="Fan"-->
+        <!--                                                        android:textColor="@color/colorPrimary"-->
+        <!--                                                        android:textSize="25dp"-->
+        <!--                                                        app:strokeColor="@color/colorAccent"-->
+        <!--                                                        app:strokeWidth="2dp" />-->
+
+        <!--                                                    <jp.hamcheesedev.outlinedtextview.CompatOutlinedTextView-->
+        <!--                                                        android:layout_width="wrap_content"-->
+        <!--                                                        android:layout_height="wrap_content"-->
+        <!--                                                        android:fontFamily="@font/raleway"-->
+        <!--                                                        android:text="Speed"-->
+        <!--                                                        android:textColor="@color/colorPrimary"-->
+        <!--                                                        android:textSize="18dp"-->
+        <!--                                                        app:strokeColor="@color/colorAccent"-->
+        <!--                                                        app:strokeWidth="1dp" />-->
+
+        <!--                                                </LinearLayout>-->
+
+        <!--                                                <jp.hamcheesedev.outlinedtextview.CompatOutlinedTextView-->
+        <!--                                                    android:id="@+id/fan_speed"-->
+        <!--                                                    android:layout_width="wrap_content"-->
+        <!--                                                    android:layout_height="wrap_content"-->
+        <!--                                                    android:layout_marginTop="20dp"-->
+        <!--                                                    android:fontFamily="@font/raleway"-->
+        <!--                                                    android:text="0%"-->
+        <!--                                                    android:textColor="@color/colorPrimary"-->
+        <!--                                                    android:textSize="25dp"-->
+        <!--                                                    app:strokeColor="@color/colorAccent"-->
+        <!--                                                    app:strokeWidth="2dp" />-->
+
+        <!--                                                <com.suke.widget.SwitchButton-->
+        <!--                                                    android:id="@+id/switch_fan"-->
+        <!--                                                    android:layout_width="70dp"-->
+        <!--                                                    android:layout_height="wrap_content"-->
+        <!--                                                    android:layout_marginTop="15dp" />-->
+
+        <!--                                            </LinearLayout>-->
+        <!--                                        </RelativeLayout>-->
+
+        <!--                                    </androidx.cardview.widget.CardView>-->
+
+        <!--                                </LinearLayout>-->
+
+        <!--                            </LinearLayout>-->
+
+        <!--                            <LinearLayout-->
+        <!--                                android:layout_width="match_parent"-->
+        <!--                                android:layout_height="0dp"-->
+        <!--                                android:layout_weight="1"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <LinearLayout-->
+        <!--                                    android:layout_width="0dp"-->
+        <!--                                    android:layout_height="match_parent"-->
+        <!--                                    android:layout_weight="1"-->
+        <!--                                    android:orientation="vertical">-->
+
+        <!--                                    <androidx.cardview.widget.CardView xmlns:Card_View="http://schemas.android.com/apk/res-auto"-->
+        <!--                                        android:layout_width="match_parent"-->
+        <!--                                        android:layout_height="210dp"-->
+        <!--                                        android:layout_margin="15dp"-->
+        <!--                                        Card_View:cardBackgroundColor="#FFFFFF"-->
+        <!--                                        Card_View:cardCornerRadius="15dp"-->
+        <!--                                        Card_View:cardElevation="2dp">-->
+
+        <!--                                        <LinearLayout-->
+        <!--                                            android:layout_width="match_parent"-->
+        <!--                                            android:layout_height="match_parent"-->
+        <!--                                            android:layout_marginLeft="6dp"-->
+        <!--                                            android:gravity="center"-->
+        <!--                                            android:orientation="vertical"-->
+        <!--                                            android:padding="10dp">-->
+
+        <!--                                            <ImageView-->
+        <!--                                                android:layout_width="40dp"-->
+        <!--                                                android:layout_height="40dp"-->
+        <!--                                                android:src="@drawable/ic_router" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:layout_width="wrap_content"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="15dp"-->
+        <!--                                                android:fontFamily="@font/raleway"-->
+        <!--                                                android:text="Wifi Router"-->
+        <!--                                                android:textColor="#000000"-->
+        <!--                                                android:textSize="17dp" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:id="@+id/wifi_text"-->
+        <!--                                                android:layout_width="match_parent"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="5dp"-->
+        <!--                                                android:gravity="center"-->
+        <!--                                                android:text="OFF"-->
+        <!--                                                android:textColor="@color/colorAccent"-->
+        <!--                                                android:textSize="14dp" />-->
+
+        <!--                                            <com.suke.widget.SwitchButton-->
+        <!--                                                android:id="@+id/switch_wifi"-->
+        <!--                                                android:layout_width="70dp"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="10dp" />-->
+
+        <!--                                        </LinearLayout>-->
+
+        <!--                                    </androidx.cardview.widget.CardView>-->
+
+        <!--                                </LinearLayout>-->
+
+        <!--                                <LinearLayout-->
+        <!--                                    android:layout_width="0dp"-->
+        <!--                                    android:layout_height="match_parent"-->
+        <!--                                    android:layout_weight="1"-->
+        <!--                                    android:orientation="vertical">-->
+
+        <!--                                    <androidx.cardview.widget.CardView xmlns:Card_View="http://schemas.android.com/apk/res-auto"-->
+        <!--                                        android:layout_width="match_parent"-->
+        <!--                                        android:layout_height="210dp"-->
+        <!--                                        android:layout_margin="15dp"-->
+        <!--                                        Card_View:cardBackgroundColor="#FFFFFF"-->
+        <!--                                        Card_View:cardCornerRadius="15dp"-->
+        <!--                                        Card_View:cardElevation="2dp">-->
+
+        <!--                                        <LinearLayout-->
+        <!--                                            android:layout_width="match_parent"-->
+        <!--                                            android:layout_height="match_parent"-->
+        <!--                                            android:layout_marginLeft="6dp"-->
+        <!--                                            android:gravity="center"-->
+        <!--                                            android:orientation="vertical"-->
+        <!--                                            android:padding="10dp">-->
+
+        <!--                                            <ImageView-->
+        <!--                                                android:layout_width="40dp"-->
+        <!--                                                android:layout_height="40dp"-->
+        <!--                                                android:src="@drawable/ic_tv" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:layout_width="wrap_content"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="15dp"-->
+        <!--                                                android:fontFamily="@font/raleway"-->
+        <!--                                                android:text="Smart TV"-->
+        <!--                                                android:textColor="#000000"-->
+        <!--                                                android:textSize="17dp" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:id="@+id/tv_text"-->
+        <!--                                                android:layout_width="match_parent"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="5dp"-->
+        <!--                                                android:gravity="center"-->
+        <!--                                                android:text="OFF"-->
+        <!--                                                android:textColor="@color/colorAccent"-->
+        <!--                                                android:textSize="14dp" />-->
+
+        <!--                                            <com.suke.widget.SwitchButton-->
+        <!--                                                android:id="@+id/switch_tv"-->
+        <!--                                                android:layout_width="70dp"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="10dp" />-->
+
+        <!--                                        </LinearLayout>-->
+
+        <!--                                    </androidx.cardview.widget.CardView>-->
+
+        <!--                                </LinearLayout>-->
+
+        <!--                            </LinearLayout>-->
+
+        <!--                            <LinearLayout-->
+        <!--                                android:layout_width="match_parent"-->
+        <!--                                android:layout_height="0dp"-->
+        <!--                                android:layout_weight="1"-->
+        <!--                                android:orientation="horizontal">-->
+
+        <!--                                <LinearLayout-->
+        <!--                                    android:layout_width="0dp"-->
+        <!--                                    android:layout_height="match_parent"-->
+        <!--                                    android:layout_weight="1"-->
+        <!--                                    android:orientation="vertical">-->
+
+        <!--                                    <androidx.cardview.widget.CardView xmlns:Card_View="http://schemas.android.com/apk/res-auto"-->
+        <!--                                        android:layout_width="match_parent"-->
+        <!--                                        android:layout_height="210dp"-->
+        <!--                                        android:layout_margin="15dp"-->
+        <!--                                        Card_View:cardBackgroundColor="#FFFFFF"-->
+        <!--                                        Card_View:cardCornerRadius="15dp"-->
+        <!--                                        Card_View:cardElevation="2dp">-->
+
+        <!--                                        <LinearLayout-->
+        <!--                                            android:layout_width="match_parent"-->
+        <!--                                            android:layout_height="match_parent"-->
+        <!--                                            android:layout_marginLeft="6dp"-->
+        <!--                                            android:gravity="center"-->
+        <!--                                            android:orientation="vertical"-->
+        <!--                                            android:padding="10dp">-->
+
+        <!--                                            <ImageView-->
+        <!--                                                android:layout_width="40dp"-->
+        <!--                                                android:layout_height="40dp"-->
+        <!--                                                android:src="@drawable/ic_air_conditioner" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:layout_width="wrap_content"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="15dp"-->
+        <!--                                                android:fontFamily="@font/raleway"-->
+        <!--                                                android:text="Air Conditioner"-->
+        <!--                                                android:textColor="#000000"-->
+        <!--                                                android:textSize="17dp" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:id="@+id/air_text"-->
+        <!--                                                android:layout_width="match_parent"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="5dp"-->
+        <!--                                                android:gravity="center"-->
+        <!--                                                android:text="OFF"-->
+        <!--                                                android:textColor="@color/colorAccent"-->
+        <!--                                                android:textSize="14dp" />-->
+
+        <!--                                            <com.suke.widget.SwitchButton-->
+        <!--                                                android:id="@+id/switch_air"-->
+        <!--                                                android:layout_width="70dp"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="10dp" />-->
+
+        <!--                                        </LinearLayout>-->
+
+        <!--                                    </androidx.cardview.widget.CardView>-->
+
+        <!--                                </LinearLayout>-->
+
+        <!--                                <LinearLayout-->
+        <!--                                    android:layout_width="0dp"-->
+        <!--                                    android:layout_height="match_parent"-->
+        <!--                                    android:layout_weight="1"-->
+        <!--                                    android:orientation="vertical">-->
+
+        <!--                                    <androidx.cardview.widget.CardView xmlns:Card_View="http://schemas.android.com/apk/res-auto"-->
+        <!--                                        android:layout_width="match_parent"-->
+        <!--                                        android:layout_height="210dp"-->
+        <!--                                        android:layout_margin="15dp"-->
+        <!--                                        Card_View:cardBackgroundColor="#FFFFFF"-->
+        <!--                                        Card_View:cardCornerRadius="15dp"-->
+        <!--                                        Card_View:cardElevation="2dp">-->
+
+        <!--                                        <LinearLayout-->
+        <!--                                            android:layout_width="match_parent"-->
+        <!--                                            android:layout_height="match_parent"-->
+        <!--                                            android:layout_marginLeft="6dp"-->
+        <!--                                            android:gravity="center"-->
+        <!--                                            android:orientation="vertical"-->
+        <!--                                            android:padding="10dp">-->
+
+        <!--                                            <ImageView-->
+        <!--                                                android:layout_width="40dp"-->
+        <!--                                                android:layout_height="40dp"-->
+        <!--                                                android:src="@drawable/ic_door" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:layout_width="wrap_content"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="15dp"-->
+        <!--                                                android:fontFamily="@font/raleway"-->
+        <!--                                                android:text="Door Lock"-->
+        <!--                                                android:textColor="#000000"-->
+        <!--                                                android:textSize="17dp" />-->
+
+        <!--                                            <TextView-->
+        <!--                                                android:id="@+id/door_text"-->
+        <!--                                                android:layout_width="match_parent"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="5dp"-->
+        <!--                                                android:gravity="center"-->
+        <!--                                                android:text="OFF"-->
+        <!--                                                android:textColor="@color/colorAccent"-->
+        <!--                                                android:textSize="14dp" />-->
+
+        <!--                                            <com.suke.widget.SwitchButton-->
+        <!--                                                android:id="@+id/switch_door"-->
+        <!--                                                android:layout_width="70dp"-->
+        <!--                                                android:layout_height="wrap_content"-->
+        <!--                                                android:layout_marginTop="10dp" />-->
+
+        <!--                                        </LinearLayout>-->
+
+        <!--                                    </androidx.cardview.widget.CardView>-->
+
+        <!--                                </LinearLayout>-->
+
+        <!--                            </LinearLayout>-->
+
+        <!--                        </LinearLayout>-->
+
+        <!--                    </LinearLayout>-->
+
+        <!--                </ScrollView>-->
+
+
+        <!--    Menu list item-->
+
+        <!--    <LinearLayout-->
+        <!--        android:layout_width="match_parent"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:orientation="vertical"-->
+        <!--        >-->
+        <!--        <LinearLayout-->
+        <!--            android:visibility="gone"-->
+        <!--            android:id="@+id/my_menu_view"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:orientation="vertical"-->
+        <!--            android:gravity="right"-->
+        <!--            android:layout_marginTop="150dp"-->
+        <!--            >-->
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="220dp"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_margin="10dp"-->
+        <!--                android:background="@drawable/item_back"-->
+        <!--                >-->
+
+        <!--                <LinearLayout-->
+        <!--                    android:orientation="vertical"-->
+        <!--                    android:layout_margin="10dp"-->
+        <!--                    android:layout_width="match_parent"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:gravity="center">-->
+
+        <!--                    <ListView-->
+        <!--                        android:id="@+id/listview"-->
+        <!--                        android:layout_width="match_parent"-->
+        <!--                        android:layout_height="250dp"-->
+        <!--                        android:layout_alignParentStart="true"-->
+        <!--                        android:divider="@color/colorAccent"-->
+        <!--                        android:dividerHeight="0.5dp"-->
+        <!--                        />-->
+
+        <!--                </LinearLayout>-->
+
+        <!--            </LinearLayout>-->
+
+        <!--        </LinearLayout>-->
+        <!--    </LinearLayout>-->
+    </RelativeLayout>
+</FrameLayout>

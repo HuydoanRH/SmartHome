@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.LivingRoomFragment"
+    >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/rectangle_btn_menu"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="29dp"
+                        android:layout_height="40dp"
+                        android:paddingRight="5dp"
+                        android:src="@drawable/temperature" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/temp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/dmsans"
+                            android:text="30°C"
+                            android:textColor="@color/colorMain"
+                            android:textFontWeight="700"
+                            android:textSize="21dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/dmsans"
+                            android:text="Temperature"
+                            android:textColor="@color/colorMain"
+                            android:textFontWeight="400"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="60dp"
+                    android:layout_marginLeft="40dp"
+                    android:background="@drawable/rectangle_btn_menu"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/humidity" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/humidity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/dmsans"
+                            android:text="71%"
+                            android:textColor="@color/colorMain"
+                            android:textFontWeight="700"
+                            android:textSize="21dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/dmsans"
+                            android:text="Humidity"
+                            android:textColor="@color/colorMain"
+                            android:textFontWeight="400"
+                            android:textSize="12dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:fontFamily="@font/dmsans"
+                android:paddingLeft="10dp"
+                android:text="Smart Control"
+                android:textColor="@color/colorMain"
+                android:textFontWeight="600"
+                android:textSize="20dp">
+            </TextView>
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@drawable/background_solid_curb"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="15dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:background="@drawable/background_white_curb"
+                        android:paddingBottom="15dp"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                >
+
+                                <androidx.cardview.widget.CardView
+                                    xmlns:Card_View="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="210dp"
+                                    android:layout_margin="15dp"
+                                    Card_View:cardCornerRadius="15dp"
+                                    Card_View:cardBackgroundColor="#FFFFFF"
+                                    Card_View:cardElevation="2dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:padding="10dp"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="6dp"
+                                        >
+
+                                        <ImageView
+                                            android:layout_width="55dp"
+                                            android:layout_height="55dp"
+                                            android:src="@drawable/ic_light"
+                                            />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="LED Light"
+                                            android:fontFamily="@font/raleway"
+                                            android:textSize="17dp"
+                                            android:textColor="#000000"
+                                            android:layout_marginTop="15dp"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/light_text"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="OFF"
+                                            android:textSize="14dp"
+                                            android:textColor="@color/colorMain"
+                                            android:gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            />
+
+                                        <com.suke.widget.SwitchButton
+                                            android:id="@+id/switch_light"
+                                            android:layout_width="70dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"/>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                >
+                                <androidx.cardview.widget.CardView
+                                    xmlns:Card_View="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="210dp"
+                                    android:layout_margin="15dp"
+                                    Card_View:cardCornerRadius="15dp"
+                                    Card_View:cardBackgroundColor="#FFFFFF"
+                                    Card_View:cardElevation="2dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:padding="10dp"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="6dp"
+                                        >
+
+                                        <ImageView
+                                            android:layout_width="52dp"
+                                            android:layout_height="52dp"
+                                            android:src="@drawable/ic_fan"
+                                            />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Fan"
+                                            android:fontFamily="@font/raleway"
+                                            android:textSize="17dp"
+                                            android:textColor="#000000"
+                                            android:layout_marginTop="15dp"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/fan_text"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="OFF"
+                                            android:textSize="14dp"
+                                            android:textColor="@color/colorMain"
+                                            android:gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            />
+
+                                        <com.suke.widget.SwitchButton
+                                            android:id="@+id/switch_fan"
+                                            android:layout_width="70dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"/>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+<!--                                <androidx.cardview.widget.CardView-->
+<!--                                    xmlns:Card_View="http://schemas.android.com/apk/res-auto"-->
+<!--                                    android:layout_width="match_parent"-->
+<!--                                    android:layout_height="210dp"-->
+<!--                                    android:layout_margin="15dp"-->
+<!--                                    Card_View:cardCornerRadius="15dp"-->
+<!--                                    Card_View:cardBackgroundColor="#FFFFFF"-->
+<!--                                    Card_View:cardElevation="2dp">-->
+
+<!--                                    <RelativeLayout-->
+<!--                                        android:layout_width="match_parent"-->
+<!--                                        android:layout_height="match_parent"-->
+<!--                                        >-->
+
+
+<!--                                        <LinearLayout-->
+<!--                                            android:layout_width="match_parent"-->
+<!--                                            android:layout_height="match_parent"-->
+<!--                                            android:orientation="vertical"-->
+<!--                                            android:gravity="bottom"-->
+<!--                                            >-->
+
+<!--                                            <me.itangqi.waveloadingview.WaveLoadingView-->
+<!--                                                android:id="@+id/waveLoadingView"-->
+<!--                                                android:layout_width="210dp"-->
+<!--                                                android:layout_height="210dp"-->
+<!--                                                app:wlv_borderColor="@android:color/white"-->
+<!--                                                app:wlv_progressValue="0"-->
+<!--                                                app:wlv_shapeType="square"-->
+<!--                                                app:wlv_round_rectangle="true"-->
+<!--                                                app:wlv_triangle_direction="north"-->
+<!--                                                app:wlv_titleCenterStrokeColor="@android:color/holo_blue_dark"-->
+<!--                                                app:wlv_titleCenterColor="@android:color/white"-->
+<!--                                                app:wlv_waveAmplitude="70"-->
+<!--                                                app:wlv_waveColor="@color/colorAccent"/>-->
+
+<!--                                        </LinearLayout>-->
+
+<!--&lt;!&ndash;                                        <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                                            android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                            android:layout_height="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                            android:orientation="vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                                            android:padding="10dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                            android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                            android:layout_marginLeft="6dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                            >&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                            <LinearLayout&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:layout_width="match_parent"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:orientation="vertical"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:layout_gravity="center"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                >&ndash;&gt;-->
+
+
+<!--&lt;!&ndash;                                                <jp.hamcheesedev.outlinedtextview.CompatOutlinedTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:text="Fan"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:fontFamily="@font/raleway"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:textSize="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:textColor="@color/colorPrimary"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    app:strokeColor="@color/colorMain"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    app:strokeWidth="2dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    />&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <jp.hamcheesedev.outlinedtextview.CompatOutlinedTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:text="Speed"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:fontFamily="@font/raleway"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:textSize="18dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    android:textColor="@color/colorPrimary"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    app:strokeColor="@color/colorMain"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    app:strokeWidth="1dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                    />&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                            </LinearLayout>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                            <jp.hamcheesedev.outlinedtextview.CompatOutlinedTextView&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:id="@+id/fan_speed"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:text="0%"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:textSize="25dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:textColor="@color/colorPrimary"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                app:strokeColor="@color/colorMain"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:layout_marginTop="20dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:fontFamily="@font/raleway"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                app:strokeWidth="2dp"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                            <com.suke.widget.SwitchButton&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:id="@+id/switch_fan"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:layout_width="70dp"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--&lt;!&ndash;                                                android:layout_marginTop="15dp"/>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                                        </LinearLayout>&ndash;&gt;-->
+<!--                                    </RelativeLayout>-->
+
+<!--                                </androidx.cardview.widget.CardView>-->
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                >
+
+                                <androidx.cardview.widget.CardView
+                                    xmlns:Card_View="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="210dp"
+                                    android:layout_margin="15dp"
+                                    Card_View:cardCornerRadius="15dp"
+                                    Card_View:cardBackgroundColor="#FFFFFF"
+                                    Card_View:cardElevation="2dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:padding="10dp"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="6dp"
+                                        >
+
+                                        <ImageView
+                                            android:layout_width="55dp"
+                                            android:layout_height="55dp"
+                                            android:src="@drawable/ic_air_conditioner"
+                                            />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Air Conditioner"
+                                            android:fontFamily="@font/raleway"
+                                            android:textSize="17dp"
+                                            android:textColor="@color/colorMain"
+                                            android:layout_marginTop="15dp"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/air_text"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="OFF"
+                                            android:textSize="14dp"
+                                            android:textColor="@color/colorMain"
+                                            android:gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            />
+
+                                        <com.suke.widget.SwitchButton
+                                            android:id="@+id/switch_air"
+                                            android:layout_width="70dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"/>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="vertical"
+                                >
+
+                                <androidx.cardview.widget.CardView
+                                    xmlns:Card_View="http://schemas.android.com/apk/res-auto"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="210dp"
+                                    android:layout_margin="15dp"
+                                    Card_View:cardCornerRadius="15dp"
+                                    Card_View:cardBackgroundColor="#FFFFFF"
+                                    Card_View:cardElevation="2dp">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:orientation="vertical"
+                                        android:padding="10dp"
+                                        android:gravity="center"
+                                        android:layout_marginLeft="6dp"
+                                        >
+
+                                        <ImageView
+                                            android:layout_width="55dp"
+                                            android:layout_height="55dp"
+                                            android:src="@drawable/ic_door"
+                                            />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="Door Lock"
+                                            android:textSize="17dp"
+                                            android:fontFamily="@font/raleway"
+                                            android:textColor="@color/colorMain"
+                                            android:layout_marginTop="15dp"
+                                            />
+
+                                        <TextView
+                                            android:id="@+id/door_text"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="OFF"
+                                            android:textSize="14dp"
+                                            android:textColor="@color/colorMain"
+                                            android:gravity="center"
+                                            android:layout_marginTop="5dp"
+                                            />
+
+                                        <com.suke.widget.SwitchButton
+                                            android:id="@+id/switch_door"
+                                            android:layout_width="70dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="10dp"/>
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>

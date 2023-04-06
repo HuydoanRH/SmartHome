@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Home</string>
+    <string name="copyright">copyright © ComGaXoiMo</string>
+    <string name="web">www.hcmut.edu.vn/</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
