@@ -3,31 +3,45 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable-v24/chair2.xml" value="0.1085" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/back_top.xml" value="0.215" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/background_solid_curb.xml" value="0.1085" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/custom_button.xml" value="0.1085" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/fan_fragment.xml" value="0.1085" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_air_conditioner.xml" value="0.213" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_arrow_forward_black_24dp.xml" value="0.1085" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_baseline_notifications_active_24.xml" value="0.1085" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.1085" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_close.xml" value="0.1085" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_door.xml" value="0.213" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_fan.xml" value="0.243" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_humidity.xml" value="0.217" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_light.xml" value="0.1" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_list.xml" value="0.1085" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_settings.xml" value="0.1085" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/ic_tv.xml" value="0.1085" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/power_on.xml" value="0.215" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/rectangle_btn_menu.xml" value="0.215" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/drawable/rectangle_solid.xml" value="0.215" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/activity_main.xml" value="0.253125" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/activity_main2.xml" value="0.17567567567567569" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/activity_splash.xml" value="0.253125" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/content.xml" value="0.14578879863189398" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fan_speed_fragment.xml" value="0.253125" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_bath_room.xml" value="0.21979166666666666" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_be_room.xml" value="0.20572916666666666" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_bedroom.xml" value="0.20572916666666666" />
-        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_camera.xml" value="0.253125" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_camera.xml" value="0.22" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_chart.xml" value="0.20104166666666667" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_dining_room.xml" value="0.21979166666666666" />
-        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_living_room.xml" value="0.16666666666666666" />
-        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_setting.xml" value="0.26614583333333336" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_home.xml" value="0.2064102564102564" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_living_room.xml" value="0.3333333333333333" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_setting.xml" value="0.22" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/fragment_tab_bar.xml" value="0.3333333333333333" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/layout/my_h.xml" value="0.253125" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/menu/bottom_nav_menu.xml" value="0.21979166666666666" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/menu/room_nav_menu.xml" value="0.21979166666666666" />
+        <entry key="..\:/LEARNING/CQ_VB2/SEM_222/DADN/SEM222-DADN-SmartHome/app/src/main/res/xml/preferences.xml" value="0.14578879863189398" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/GAME/Ass_2/SEM222-DADN-SmartHome/app/src/main/res/drawable-v24/bathtub.xml" value="0.209" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/GAME/Ass_2/SEM222-DADN-SmartHome/app/src/main/res/drawable-v24/bathtub2.xml" value="0.209" />
         <entry key="..\:/LEARNING/CQ_VB2/SEM_222/GAME/Ass_2/SEM222-DADN-SmartHome/app/src/main/res/drawable-v24/bed.xml" value="0.209" />

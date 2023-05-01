@@ -10,6 +10,10 @@ android {
         versionName "1.0"
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
+    aaptOptions {
+        noCompress "tflite"
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -30,6 +34,18 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.2.0'
+
+    def cameraxVersion = "1.1.0-alpha05"
+    implementation "androidx.camera:camera-core:${cameraxVersion}"
+    implementation "androidx.camera:camera-camera2:${cameraxVersion}"
+    implementation "androidx.camera:camera-lifecycle:${cameraxVersion}"
+
+    // CameraX View class (For camera preview)
+    implementation "androidx.camera:camera-core:1.2.0-alpha04"
+    implementation "androidx.camera:camera-camera2:1.2.0-alpha04"
+    implementation "androidx.camera:camera-lifecycle:1.2.0-alpha04"
+    implementation "androidx.camera:camera-view:1.2.0-alpha04"
+
     implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
@@ -47,6 +63,33 @@ dependencies {
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
     implementation 'com.jjoe64:graphview:4.2.2'
-    implementation project(':Chart')
+    // openCV
+    implementation 'androidx.preference:preference:1.2.0'
+    //implementation 'com.takisoft.fix:preference-v7:25.3.0.0'
+    //TensorFlow Lite libraries (To recognize faces)
+    implementation 'org.tensorflow:tensorflow-lite-task-vision:0.3.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.3.0'
+    implementation 'org.tensorflow:tensorflow-lite:0.0.0-nightly-SNAPSHOT'
 
+    //ML Kit (To detect faces)
+    implementation 'com.google.mlkit:face-detection:16.1.5'
+    implementation 'com.google.android.gms:play-services-mlkit-face-detection:17.0.1'
+
+    //GSON (Conversion of String to Map & Vice-Versa)
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+    //Lottie-files (Splash-screen Animation)
+    implementation "com.airbnb.android:lottie:4.2.2"
+
+    //
+    def nav_version = "2.3.0"
+    implementation "androidx.navigation:navigation-fragment:$nav_version"
+    implementation "androidx.navigation:navigation-ui:$nav_version"
+
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    // chart
+    implementation 'com.android.support:appcompat-v7:26.+'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.+'
+    implementation 'com.android.volley:volley:1.1.1'
 }

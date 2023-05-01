@@ -27,32 +27,32 @@
 
                 <LinearLayout
                     android:id="@+id/livingRoomOFF"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/rectangle_btn_menu"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="gone">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/sofa" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/livingRoomON"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/rectangle_solid"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="visible">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/sofa2" />
 
                 </LinearLayout>
@@ -67,7 +67,7 @@
                 android:paddingTop="5dp"
                 android:text="Living Room"
                 android:textColor="@color/colorMain"
-                android:textFontWeight="400"
+                android:textFontWeight="350"
                 android:textSize="12dp">
 
             </TextView>
@@ -76,7 +76,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -89,32 +89,32 @@
 
                 <LinearLayout
                     android:id="@+id/diningRoomOFF"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/rectangle_btn_menu"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="visible">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/chair" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/diningRoomON"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/rectangle_solid"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="gone">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/chair2" />
 
                 </LinearLayout>
@@ -129,7 +129,7 @@
                 android:paddingTop="5dp"
                 android:text="Dining Room"
                 android:textColor="@color/colorMain"
-                android:textFontWeight="400"
+                android:textFontWeight="350"
                 android:textSize="12dp">
 
             </TextView>
@@ -139,7 +139,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -152,32 +152,32 @@
 
                 <LinearLayout
                     android:id="@+id/BedRoomOFF"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/rectangle_btn_menu"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="visible">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/bed" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/BedRoomON"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/rectangle_solid"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="gone">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/bed2" />
 
                 </LinearLayout>
@@ -192,7 +192,7 @@
                 android:paddingTop="5dp"
                 android:text="BedRoom"
                 android:textColor="@color/colorMain"
-                android:textFontWeight="400"
+                android:textFontWeight="350"
                 android:textSize="12dp">
 
             </TextView>
@@ -202,7 +202,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="20dp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -215,32 +215,32 @@
 
                 <LinearLayout
                     android:id="@+id/BathRoomOFF"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/rectangle_btn_menu"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="visible">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/bathtub" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:id="@+id/BathRoomON"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:background="@drawable/rectangle_solid"
                     android:gravity="center"
                     android:orientation="vertical"
                     android:visibility="gone">
 
                     <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/bathtub2" />
 
                 </LinearLayout>
@@ -255,7 +255,7 @@
                 android:paddingTop="5dp"
                 android:text="BathRoom"
                 android:textColor="@color/colorMain"
-                android:textFontWeight="400"
+                android:textFontWeight="350"
                 android:textSize="12dp">
 
             </TextView>
@@ -275,15 +275,15 @@
 <!--                android:orientation="horizontal">-->
 <!--                <LinearLayout-->
 <!--                    android:id="@+id/livingRoomBgr"-->
-<!--                    android:layout_width="60dp"-->
-<!--                    android:layout_height="60dp"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp"-->
 <!--                    android:background="@drawable/rectangle_btn_menu"-->
 <!--                    android:gravity="center"-->
 <!--                    android:orientation="vertical">-->
 <!--                    <ImageView-->
 <!--                        android:gravity="center"-->
-<!--                        android:layout_width="40dp"-->
-<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_width="35dp"-->
+<!--                        android:layout_height="35dp"-->
 <!--                        android:src="@drawable/sofa" />-->
 <!--                </LinearLayout>-->
 <!--            </LinearLayout>-->
@@ -297,7 +297,7 @@
 <!--                android:paddingTop="5dp"-->
 <!--                android:text="Living Room"-->
 <!--                android:textColor="@color/colorMain"-->
-<!--                android:textFontWeight="400"-->
+<!--                android:textFontWeight="350"-->
 <!--                android:textSize="12dp">-->
 <!--            </TextView>-->
 <!--        </LinearLayout>-->
@@ -318,15 +318,15 @@
 
 <!--                <LinearLayout-->
 <!--                    android:id="@+id/diningRoomBgr"-->
-<!--                    android:layout_width="60dp"-->
-<!--                    android:layout_height="60dp"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp"-->
 <!--                    android:background="@drawable/rectangle_btn_menu"-->
 <!--                    android:gravity="center"-->
 <!--                    android:orientation="vertical">-->
 <!--                    <ImageView-->
 <!--                        android:id="@+id/diningRoomIcon"-->
-<!--                        android:layout_width="40dp"-->
-<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_width="35dp"-->
+<!--                        android:layout_height="35dp"-->
 <!--                        android:src="@drawable/chair" />-->
 <!--                </LinearLayout>-->
 <!--            </LinearLayout>-->
@@ -339,7 +339,7 @@
 <!--                android:paddingTop="5dp"-->
 <!--                android:text="Dining Room"-->
 <!--                android:textColor="@color/colorMain"-->
-<!--                android:textFontWeight="400"-->
+<!--                android:textFontWeight="350"-->
 <!--                android:textSize="12dp">-->
 <!--            </TextView>-->
 <!--        </LinearLayout>-->
@@ -360,15 +360,15 @@
 
 <!--                <LinearLayout-->
 <!--                    android:id="@+id/BedRoomBgr"-->
-<!--                    android:layout_width="60dp"-->
-<!--                    android:layout_height="60dp"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp"-->
 <!--                    android:background="@drawable/rectangle_btn_menu"-->
 <!--                    android:gravity="center"-->
 <!--                    android:orientation="vertical">-->
 <!--                    <ImageView-->
 <!--                        android:id="@+id/BedRoomIcon"-->
-<!--                        android:layout_width="40dp"-->
-<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_width="35dp"-->
+<!--                        android:layout_height="35dp"-->
 <!--                        android:src="@drawable/bed" />-->
 
 <!--                </LinearLayout>-->
@@ -382,7 +382,7 @@
 <!--                android:paddingTop="5dp"-->
 <!--                android:text="BedRoom"-->
 <!--                android:textColor="@color/colorMain"-->
-<!--                android:textFontWeight="400"-->
+<!--                android:textFontWeight="350"-->
 <!--                android:textSize="12dp">-->
 <!--            </TextView>-->
 <!--        </LinearLayout>-->
@@ -401,15 +401,15 @@
 <!--                android:orientation="horizontal">-->
 <!--                <LinearLayout-->
 <!--                    android:id="@+id/BathRoom"-->
-<!--                    android:layout_width="60dp"-->
-<!--                    android:layout_height="60dp"-->
+<!--                    android:layout_width="50dp"-->
+<!--                    android:layout_height="50dp"-->
 <!--                    android:background="@drawable/rectangle_btn_menu"-->
 <!--                    android:gravity="center"-->
 <!--                    android:orientation="vertical">-->
 <!--                    <ImageView-->
 <!--                        android:id="@+id/BathRoomIcon"-->
-<!--                        android:layout_width="40dp"-->
-<!--                        android:layout_height="40dp"-->
+<!--                        android:layout_width="35dp"-->
+<!--                        android:layout_height="35dp"-->
 <!--                        android:src="@drawable/bathtub" />-->
 
 <!--                </LinearLayout>-->
@@ -423,7 +423,7 @@
 <!--                android:paddingTop="5dp"-->
 <!--                android:text="BathRoom"-->
 <!--                android:textColor="@color/colorMain"-->
-<!--                android:textFontWeight="400"-->
+<!--                android:textFontWeight="350"-->
 <!--                android:textSize="12dp">-->
 <!--            </TextView>-->
 <!--        </LinearLayout>-->

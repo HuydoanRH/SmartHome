@@ -11,6 +11,6 @@ pluginManagement{
     }
 }
 
-include ':app', ':Chart'
-project(':Chart').projectDir = new File('libs/Chart')
+include ':app'
+
 

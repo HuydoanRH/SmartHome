@@ -3,17 +3,17 @@
 
     <item android:title="Home"
         android:icon="@drawable/ic_baseline_home_24"
-        android:id="@+id/home"/>
+        android:id="@+id/menu_home"/>
 
     <item android:title="Chart"
         android:icon="@drawable/ic_baseline_show_chart_24"
-        android:id="@+id/chart"/>
+        android:id="@+id/menu_chart"/>
 
     <item android:title="Camera"
         android:icon="@drawable/ic_baseline_videocam_24"
-        android:id="@+id/camera" />
+        android:id="@+id/menu_camera" />
 
     <item android:title="Setting"
         android:icon="@drawable/ic_baseline_settings_24"
-        android:id="@+id/setting" />
+        android:id="@+id/menu_setting" />
 </menu>

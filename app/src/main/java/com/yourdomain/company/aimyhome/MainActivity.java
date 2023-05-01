@@ -1,1140 +1,134 @@
 package com.yourdomain.company.aimyhome;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.viewpager2.widget.ViewPager2;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.yourdomain.company.aimyhome.Fragment.BathRoomFragment;
 import com.yourdomain.company.aimyhome.Fragment.BedroomFragment;
 import com.yourdomain.company.aimyhome.Fragment.CameraFragment;
+import com.yourdomain.company.aimyhome.Fragment.ChartFragment;
 import com.yourdomain.company.aimyhome.Fragment.DiningRoomFragment;
 import com.yourdomain.company.aimyhome.Fragment.HomeFragment;
 import com.yourdomain.company.aimyhome.Fragment.LivingRoomFragment;
 import com.yourdomain.company.aimyhome.Fragment.SettingFragment;
 import com.yourdomain.company.aimyhome.databinding.ActivityMainBinding;
 
+import org.checkerframework.checker.units.qual.C;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
 import org.eclipse.paho.client.mqttv3.MqttCallbackExtended;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import java.util.Objects;
+
 
 public class MainActivity extends AppCompatActivity {
-    // declare attribute
+    private static final int MY_CAMERA_REQUEST_CODE = 100 ;
 
-    ActivityMainBinding binding;
+    BottomNavigationView bottomNavigationView;
+    private ViewPager2 viewPager2;
+    HomeFragment homeFragment;
+    ChartFragment chartFragment;
+    CameraFragment cameraFragment;
+    SettingFragment settingFragment;
 
-
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        replaceFragment(new HomeFragment());
 
-        binding.bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()){
-                case R.id.home:
-                    replaceFragment(new HomeFragment());
-                    break;
-                case R.id.chart:
-                    replaceFragment(new CameraFragment.ChartFragment());
-                    break;
-                case R.id.camera:
-                    replaceFragment(new CameraFragment());
-                    break;
-                case R.id.setting:
-                    replaceFragment(new SettingFragment());
-                    break;
+        //Camera Permission
+        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(new String[]{Manifest.permission.CAMERA}, MY_CAMERA_REQUEST_CODE);
+        }
+
+        setContentView(R.layout.activity_main);
+
+        viewPager2 = findViewById(R.id.frame_layout);
+        bottomNavigationView = findViewById(R.id.bottomNavigationView);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()){
+                            case R.id.menu_home:
+                                Log.d("Huy",  "NavHome");
+                                viewPager2.setCurrentItem(0, false);
+                                break;
+                            case R.id.menu_chart:
+                                Log.d("Huy",  "NavChart");
+                                viewPager2.setCurrentItem(1, false);
+                                break;
+                            case R.id.menu_camera:
+                                Log.d("Huy",  "NavCam");
+                                viewPager2.setCurrentItem(2, false);
+                                break;
+                            case R.id.menu_setting:
+                                Log.d("Huy",  "NavSet");
+                                viewPager2.setCurrentItem(3, false);
+                                break;
+                        }
+                        return false;
+                    }
+                }
+        );
+
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+                switch (position){
+                    case 0:
+                        bottomNavigationView.getMenu().findItem(R.id.menu_home).setChecked(true);
+                        break;
+                    case 1:
+                        bottomNavigationView.getMenu().findItem(R.id.menu_chart).setChecked(true);
+                        break;
+                    case 2:
+                        bottomNavigationView.getMenu().findItem(R.id.menu_camera).setChecked(true);
+                        break;
+                    case 3:
+                        bottomNavigationView.getMenu().findItem(R.id.menu_setting).setChecked(true);
+                        break;
+                }
             }
-            return true;
         });
+
+        setupViewPager(viewPager2);
 
     }
 
-    private void replaceFragment(Fragment fragment){
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.frame_layout, fragment);
-        fragmentTransaction.commit();
-
+    private void setupViewPager(ViewPager2 viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), getLifecycle());
+        homeFragment = new HomeFragment();
+        chartFragment = new ChartFragment();
+        cameraFragment = new CameraFragment();
+        settingFragment = new SettingFragment();
+        adapter.addFragment(homeFragment);
+        adapter.addFragment(chartFragment);
+        adapter.addFragment(cameraFragment);
+        adapter.addFragment(settingFragment);
+        viewPager.setAdapter(adapter);
     }
 
 }
-
-//
-//        date_formate();
-//
-//        // on click methode for menu function
-//
-//        fan_speed.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                FanSpeed fanSpeed = new FanSpeed();
-//                fanSpeed.show(getSupportFragmentManager(),"FanDialogBox");
-//            }
-//        });
-//
-//        notify_off.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                notify_on.setVisibility(View.VISIBLE);
-//                notify_off.setVisibility(View.GONE);
-//                if (check_connect == 5)
-//                {
-//                        String string = "NOTIFI ON";
-//                        sendReceive.write(string.getBytes());
-//                }
-//            }
-//        });
-//
-//        notify_on.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                notify_on.setVisibility(View.GONE);
-//                notify_off.setVisibility(View.VISIBLE);
-//                if (check_connect == 5)
-//                {
-//
-//                    String string = "NOTIFI OFF";
-//                    sendReceive.write(string.getBytes());
-//
-//                }
-//            }
-//        });
-//
-//        power_on.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                switch_off_value = 5;
-//
-//                power_on.setVisibility(View.GONE);
-//                power_off.setVisibility(View.VISIBLE);
-//
-//                light_text.setText("OFF");
-//                wifi_text.setText("OFF");
-//                tv_text.setText("OFF");
-//                air_text.setText("OFF");
-//                door_text.setText("OFF");
-//
-//                light.setChecked(false);
-//                fan.setChecked(false);
-//                wifi.setChecked(false);
-//                tv.setChecked(false);
-//                air.setChecked(false);
-//                door_lock.setChecked(false);
-//
-//                fan_value = "0";
-//                fan_speed.setText(fan_value + "%");
-//                int i = Integer.valueOf(fan_value);
-//                mWaveLoadingView.setProgressValue(i);
-//
-//                if (check_connect == 5)
-//                {
-//                    String string = "POWER OFF";
-//                    sendReceive.write(string.getBytes());
-//                }
-//            }
-//        });
-//
-//        power_off.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//
-//                power_on.setVisibility(View.VISIBLE);
-//                power_off.setVisibility(View.GONE);
-//
-//                if (check_connect == 5)
-//                {
-//                    String string = "POWER ON";
-//                    sendReceive.write(string.getBytes());
-//                }
-//            }
-//        });
-//
-//        ai_off.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                ai_on.setVisibility(View.VISIBLE);
-//                ai_off.setVisibility(View.GONE);
-//                if (check_connect == 5)
-//                {
-//                    String string = "AI ON";
-//                    sendReceive.write(string.getBytes());
-//                }
-//            }
-//        });
-//
-//        ai_on.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                ai_off.setVisibility(View.VISIBLE);
-//                ai_on.setVisibility(View.GONE);
-//                if (check_connect == 5)
-//                {
-//                    String string = "AI OFF";
-//                    sendReceive.write(string.getBytes());
-//                }
-//            }
-//        });
-//
-//        sensor_on.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                sensor_off.setVisibility(View.VISIBLE);
-//                sensor_on.setVisibility(View.GONE);
-//                if (check_connect == 5)
-//                {
-//                    String string = "SENSOR OFF";
-//                    sendReceive.write(string.getBytes());
-//                }
-//            }
-//        });
-//
-//        sensor_off.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                sensor_on.setVisibility(View.VISIBLE);
-//                sensor_off.setVisibility(View.GONE);
-//                if (check_connect == 5)
-//                {
-//                    String string = "SENSOR ON";
-//                    sendReceive.write(string.getBytes());
-//                }
-//            }
-//        });
-//
-//        findViewByIdes();
-//
-//        bluetoothAdapter=BluetoothAdapter.getDefaultAdapter();
-//
-//        if(!bluetoothAdapter.isEnabled())
-//        {
-//            Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-//            startActivityForResult(enableIntent,REQUEST_ENABLE_BLUETOOTH);
-//        }
-//
-//        menuView = findViewById(R.id.my_menu_view);
-//        menuView.setVisibility(View.INVISIBLE);
-//        isUp = false;
-//
-//        implementListeners();
-//
-//
-//        light.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
-//
-//
-//                if (view.isChecked())
-//                {
-//                    switch_off_value = 0;
-//                    light_text.setText("ON");
-//                    power_on.setVisibility(View.VISIBLE);
-//                    power_off.setVisibility(View.GONE);
-//                if (check_connect == 5)
-//                {
-//                    if (light_tt == 0){
-//                        String string = "LIGHT ON";
-//                        sendReceive.write(string.getBytes());
-//                    }
-//
-//                }
-//
-//                }else {
-//                    light_text.setText("OFF");
-//                    if (switch_off_value == 0)
-//                    {
-//                        if (check_connect == 5)
-//                        {
-//                            if (light_tt == 0)
-//                            {
-//                                String string = "LIGHT OFF";
-//                                sendReceive.write(string.getBytes());
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        });
-//
-//        fan.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
-//
-//                if (view.isChecked())
-//                {
-//                    power_on.setVisibility(View.VISIBLE);
-//                    power_off.setVisibility(View.GONE);
-//
-//                    if (fan_tt == 0) {
-//
-//                        switch_off_value = 0;
-//
-//                        if (switch_control_value == 0) {
-//                            if (fan_change_value == 0) {
-//                                fan_value = "70";
-//                                fan_speed.setText(fan_value + "%");
-//                                int i = Integer.valueOf(fan_value);
-//                                mWaveLoadingView.setProgressValue(i);
-//                            } else {
-//
-//                                int i = Integer.valueOf(fan_value);
-//                                mWaveLoadingView.setProgressValue(i);
-//                            }
-//                        }
-//
-//                        if (check_connect == 5) {
-//                            if (fan_change_value == 0) {
-//                                fan_value = "70";
-//                                fansend_value();
-//                            }
-//
-//                        }
-//
-//                    }
-//
-//                }else {
-//
-//                    if (fan_tt == 0) {
-//
-//                        fan_change_value = 0;
-//                        fan_value = "0";
-//                        fan_speed.setText("0%");
-//                        int i = Integer.valueOf(fan_value);
-//                        mWaveLoadingView.setProgressValue(i);
-//                        switch_control_value = 0;
-//                        if (switch_off_value == 0) {
-//                            if (check_connect == 5) {
-//                                String string = "FAN OFF";
-//                                sendReceive.write(string.getBytes());
-//                            }
-//                        }
-//
-//                    }
-//                }
-//            }
-//        });
-//
-//        wifi.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
-//
-//                if (view.isChecked())
-//                {
-//                    switch_off_value = 0;
-//                    wifi_text.setText("ON");
-//                    power_on.setVisibility(View.VISIBLE);
-//                    power_off.setVisibility(View.GONE);
-//                    if (check_connect == 5)
-//                    {
-//                        if (wifi_tt == 0)
-//                        {
-//                            String string = "WIFI ON";
-//                            sendReceive.write(string.getBytes());
-//                        }
-//                    }
-//
-//                }else {
-//                    wifi_text.setText("OFF");
-//                    if (switch_off_value == 0)
-//                    {
-//                        if (check_connect == 5)
-//                        {
-//                            if (wifi_tt == 0)
-//                            {
-//                                String string = "WIFI OFF";
-//                                sendReceive.write(string.getBytes());
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        });
-//
-//        tv.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
-//
-//                if (view.isChecked())
-//                {
-//                    switch_off_value = 0;
-//                    tv_text.setText("ON");
-//                    power_on.setVisibility(View.VISIBLE);
-//                    power_off.setVisibility(View.GONE);
-//                    if (check_connect == 5)
-//                    {
-//                        if (tv_tt == 0)
-//                        {
-//                            String string = "TV ON";
-//                            sendReceive.write(string.getBytes());
-//                        }
-//                    }
-//
-//                }else {
-//                    tv_text.setText("OFF");
-//                    if (switch_off_value == 0)
-//                    {
-//                        if (check_connect == 5)
-//                        {
-//                            if (tv_tt == 0)
-//                            {
-//                                String string = "TV OFF";
-//                                sendReceive.write(string.getBytes());
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        });
-//
-//        air.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
-//
-//                if (view.isChecked())
-//                {
-//                    switch_off_value = 0;
-//                    air_text.setText("ON");
-//                    power_on.setVisibility(View.VISIBLE);
-//                    power_off.setVisibility(View.GONE);
-//                    if (check_connect == 5)
-//                    {
-//                        if (air_tt == 0)
-//                        {
-//                            String string = "AIR ON";
-//                            sendReceive.write(string.getBytes());
-//                        }
-//                    }
-//
-//                }else {
-//                    air_text.setText("OFF");
-//                    if (switch_off_value == 0)
-//                    {
-//                        if (check_connect == 5)
-//                        {
-//                            if (air_tt == 0)
-//                            {
-//                                String string = "AIR OFF";
-//                                sendReceive.write(string.getBytes());
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        });
-//
-//        door_lock.setOnCheckedChangeListener(new SwitchButton.OnCheckedChangeListener() {
-//            @Override
-//            public void onCheckedChanged(SwitchButton view, boolean isChecked) {
-//
-//                if (view.isChecked())
-//                {
-//                    switch_off_value = 0;
-//                    door_text.setText("ON");
-//                    power_on.setVisibility(View.VISIBLE);
-//                    power_off.setVisibility(View.GONE);
-//                    if (check_connect == 5)
-//                    {
-//                        if (door_tt == 0)
-//                        {
-//                            String string = "DOOR ON";
-//                            sendReceive.write(string.getBytes());
-//                        }
-//                    }
-//
-//                }else {
-//                    door_text.setText("OFF");
-//                    if (switch_off_value == 0)
-//                    {
-//                        if (check_connect == 5)
-//                        {
-//                            if (door_tt == 0)
-//                            {
-//                                String string = "DOOR OFF";
-//                                sendReceive.write(string.getBytes());
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        });
-//
-//
-//
-//    }
-//
-//    private void date_formate() {
-//
-//        String day = new SimpleDateFormat("EEEE", Locale.getDefault()).format(new Date());
-//        String date = new SimpleDateFormat("d MMM, yyyy", Locale.getDefault()).format(new Date());
-//        date_view.setText(date);
-//        day_view.setText(day);
-//    }
-//
-//    private final BroadcastReceiver broadcastReceiver = new BroadcastReceiver() {
-//        BluetoothDevice device;
-//        @Override
-//        public void onReceive(Context context, Intent intent) {
-//            action = intent.getAction();
-//            device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
-//            if (BluetoothDevice.ACTION_ACL_CONNECTED.equals(action)) {
-//                check_connect = 5;
-//                connect.setVisibility(View.VISIBLE);
-//                fail.setVisibility(View.GONE);
-//                connecting.setVisibility(View.GONE);
-//                firstConnect();
-//            } else if (BluetoothDevice.ACTION_ACL_DISCONNECTED.equals(action)) {
-//                check_connect = 0;
-//                connect.setVisibility(View.GONE);
-//                connecting.setVisibility(View.GONE);
-//                fail.setVisibility(View.VISIBLE);
-//            }
-//        }
-//    };
-//
-//    private void firstConnect() {
-//
-//        Handler handler=new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//
-//                if (check_connect == 5)
-//                {
-//                    String string = "START DEVICE";
-//                    sendReceive.write(string.getBytes());
-//                }
-//
-//            }
-//        },1000);
-//
-//    }
-//
-//    /////////////
-//
-//    private void implementListeners() {
-//
-//
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                ClientClass clientClass=new ClientClass(btArray[i]);
-//                clientClass.start();
-//
-//                if (isUp) {
-//                    slideDown_menu(menuView);
-//                } else {
-//                    slideUp_menu(menuView);
-//                }
-//                isUp = !isUp;
-//            }
-//        });
-//
-//    }
-//
-//    Handler handler=new Handler(new Handler.Callback() {
-//        @Override
-//        public boolean handleMessage(Message msg) {
-//
-//            switch (msg.what)
-//            {
-//                case STATE_LISTENING:
-//                    // code
-//                    break;
-//                case STATE_CONNECTING:
-//                    connect.setVisibility(View.GONE);
-//                    fail.setVisibility(View.GONE);
-//                    connecting.setVisibility(View.VISIBLE);
-//                    break;
-//                case STATE_CONNECTED:
-//                    connect.setVisibility(View.VISIBLE);
-//                    fail.setVisibility(View.GONE);
-//                    connecting.setVisibility(View.GONE);
-//                    check_connect = 5;
-//                    break;
-//                case STATE_CONNECTION_FAILED:
-//                    connect.setVisibility(View.GONE);
-//                    fail.setVisibility(View.VISIBLE);
-//                    connecting.setVisibility(View.GONE);
-//                    break;
-//                case STATE_MESSAGE_RECEIVED:
-//                    byte[] readBuff= (byte[]) msg.obj;
-//                    rev_value =new String(readBuff,0,msg.arg1);
-//                    mcu();
-//                    break;
-//            }
-//            return true;
-//        }
-//    });
-//
-//    private void mcu() {
-//
-//        int_value = Integer.parseInt(rev_value);
-//
-//        String recv_value = Integer.toString(int_value);
-//
-//        if (int_value > 100 & int_value < 200)
-//        {
-//            int final_temp = int_value - 100;
-//            int fahrenheit = (final_temp * 9/5) + 32;
-//            String precess_item_value = Integer.toString(final_temp);
-//            String precess_fahren_value = Integer.toString(fahrenheit);
-//            temp.setText(precess_item_value);
-//            fahren.setText(precess_fahren_value);
-//
-//        }
-//
-//        if (int_value > 200)
-//        {
-//            int final_humidity = int_value - 200;
-//            if (final_humidity < 101)
-//            {
-//                String precess_humidity_value = Integer.toString(final_humidity);
-//                humidity.setText(precess_humidity_value + "%");
-//            }else {
-//
-//                humidity.setText("100%");
-//            }
-//        }
-//
-//        // Receive & Check MCU Port
-//
-//        if (int_value == 310)
-//        {
-//            light_tt = 1;
-//            light.setChecked(true);
-//        }else if (int_value == 311)
-//        {
-//            light_tt = 1;
-//            light.setChecked(false);
-//        }
-//
-//        if (int_value == 312)
-//        {
-//            wifi_tt = 1;
-//            wifi.setChecked(true);
-//        }else if (int_value == 313)
-//        {
-//            wifi_tt = 1;
-//            wifi.setChecked(false);
-//        }
-//
-//        if (int_value == 314)
-//        {
-//            tv_tt = 1;
-//            tv.setChecked(true);
-//        }else if (int_value == 315)
-//        {
-//            tv_tt = 1;
-//            tv.setChecked(false);
-//        }
-//
-//        if (int_value == 316)
-//        {
-//            air_tt = 1;
-//            air.setChecked(true);
-//        }else if (int_value == 317)
-//        {
-//            air_tt = 1;
-//            air.setChecked(false);
-//        }
-//
-//        if (int_value == 318)
-//        {
-//            door_tt = 1;
-//            door_lock.setChecked(true);
-//        }else if (int_value == 319)
-//        {
-//            door_tt = 1;
-//            door_lock.setChecked(false);
-//        }
-//
-//
-//        if (int_value == 320)
-//        {
-//            notify_on.setVisibility(View.VISIBLE);
-//            notify_off.setVisibility(View.GONE);
-//
-//        }else if (int_value == 321)
-//        {
-//            notify_on.setVisibility(View.GONE);
-//            notify_off.setVisibility(View.VISIBLE);
-//        }
-//
-//        if (int_value == 322)
-//        {
-//            ai_on.setVisibility(View.VISIBLE);
-//            ai_off.setVisibility(View.GONE);
-//
-//        }else if (int_value == 323)
-//        {
-//            ai_on.setVisibility(View.GONE);
-//            ai_off.setVisibility(View.VISIBLE);
-//        }
-//
-//        if (int_value == 324)
-//        {
-//            sensor_on.setVisibility(View.VISIBLE);
-//            sensor_off.setVisibility(View.GONE);
-//
-//        }else if (int_value == 325)
-//        {
-//            sensor_on.setVisibility(View.GONE);
-//            sensor_off.setVisibility(View.VISIBLE);
-//        }
-//
-//        // Fan Function
-//
-//        if (int_value == 340)
-//        {
-//            fan_tt = 1;
-//            fan_value = "0";
-//            fan.setChecked(false);
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//
-//        }else if (int_value == 341)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "10";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }else if (int_value == 342)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "20";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }else if (int_value == 343)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "30";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }else if (int_value == 344)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "40";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }else if (int_value == 345)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "50";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }else if (int_value == 346)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "60";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }else if (int_value == 347)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "70";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }else if (int_value == 348)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "80";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }else if (int_value == 349)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "90";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }else if (int_value == 350)
-//        {
-//            fan_tt = 1;
-//            fan.setChecked(true);
-//            fan_value = "100";
-//            fan_speed.setText(fan_value +"%");
-//            int i = Integer.valueOf(fan_value);
-//            mWaveLoadingView.setProgressValue(i);
-//        }
-//
-//        if (int_value == 335)
-//        {
-//            Handler handler=new Handler();
-//            handler.postDelayed(new Runnable() {
-//                @Override
-//                public void run() {
-//
-//                    light_tt = 0; wifi_tt = 0; tv_tt = 0; air_tt = 0; door_tt = 0; fan_tt = 0;
-//                }
-//            },1000);
-//        }
-//    }
-//
-//    private void findViewByIdes() {
-//        listView=(ListView) findViewById(R.id.listview);
-//    }
-//
-//    public void dispatchInformations(String mesg) {
-//
-//        fan_change_value = 10;
-//        fan_value = mesg;
-//        int i = Integer.valueOf(mesg);
-//        mWaveLoadingView.setProgressValue(i);
-//        fan_speed.setText(mesg + "%");
-//        if (i != 0)
-//        {
-//            fan.setChecked(true);
-//            switch_control_value = 5;
-//        }
-//
-//        if (i == 0)
-//        {
-//            fan.setChecked(false);
-//            switch_control_value = 0;
-//        }
-//
-//        fansend_value();
-//
-//    }
-//
-//    public String getSpeed() {
-//
-//        return fan_value;
-//
-//    }
-//
-//    public void fansend_value ()
-//    {
-//        int value_control_fan_speed = Integer.valueOf(fan_value);
-//        if (check_connect == 5)
-//        {
-//            if (value_control_fan_speed ==0)
-//            {
-//                String string = "FAN OFF";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 10 && value_control_fan_speed !=0 || value_control_fan_speed == 10)
-//            {
-//                String string = "ONE";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 20 && value_control_fan_speed > 10 || value_control_fan_speed == 20)
-//            {
-//                String string = "TWO";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 30 && value_control_fan_speed > 20 || value_control_fan_speed == 30)
-//            {
-//                String string = "THREE";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 40 && value_control_fan_speed > 30 || value_control_fan_speed == 40)
-//            {
-//                String string = "FOUR";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 50 && value_control_fan_speed > 40 || value_control_fan_speed == 50)
-//            {
-//                String string = "FIVE";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 60 && value_control_fan_speed > 50 || value_control_fan_speed == 60)
-//            {
-//                String string = "SIX";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 70 && value_control_fan_speed > 60 || value_control_fan_speed == 70)
-//            {
-//                String string = "SEVEN";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 80 && value_control_fan_speed > 70 || value_control_fan_speed == 80)
-//            {
-//                String string = "EIGHT";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 90 && value_control_fan_speed > 80 || value_control_fan_speed == 90)
-//            {
-//                String string = "NINE";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//
-//            if (value_control_fan_speed < 100 && value_control_fan_speed > 90 || value_control_fan_speed == 100)
-//            {
-//                String string = "TEN";
-//
-//                sendReceive.write(string.getBytes());
-//            }
-//        }
-
-//    private class ServerClass extends Thread
-//    {
-//
-//    }
-////    {
-////        private BluetoothServerSocket serverSocket;
-////
-////        public ServerClass(){
-////            try {
-////                serverSocket=bluetoothAdapter.listenUsingRfcommWithServiceRecord(APP_NAME,MY_UUID);
-////            } catch (IOException e) {
-////                e.printStackTrace();
-////            }
-////        }
-////
-////        public void run()
-////        {
-////            BluetoothSocket socket=null;
-////
-////            while (socket==null)
-////            {
-////                try {
-////                    Message message=Message.obtain();
-////                    message.what=STATE_CONNECTING;
-////                    handler.sendMessage(message);
-////
-////                    socket=serverSocket.accept();
-////                } catch (IOException e) {
-////                    e.printStackTrace();
-////                    Message message=Message.obtain();
-////                    message.what=STATE_CONNECTION_FAILED;
-////                    handler.sendMessage(message);
-////                }
-////
-////                if(socket!=null)
-////                {
-////                    Message message=Message.obtain();
-////                    message.what=STATE_CONNECTED;
-////                    handler.sendMessage(message);
-////
-////                    sendReceive=new SendReceive(socket);
-////                    sendReceive.start();
-////
-////                    break;
-////                }
-////            }
-////        }
-////    }
-//
-//    private class ClientClass extends Thread
-//    {
-//        private BluetoothDevice device;
-//        private BluetoothSocket socket;
-//
-//        public ClientClass (BluetoothDevice device1)
-//        {
-//            device=device1;
-//
-//            try {
-//                socket=device.createRfcommSocketToServiceRecord(MY_UUID);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//
-//        public void run()
-//        {
-//            try {
-//                socket.connect();
-//                Message message=Message.obtain();
-//                message.what=STATE_CONNECTED;
-//                handler.sendMessage(message);
-//
-//                sendReceive=new SendReceive(socket);
-//                sendReceive.start();
-//
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//                Message message=Message.obtain();
-//                message.what=STATE_CONNECTION_FAILED;
-//                handler.sendMessage(message);
-//            }
-//        }
-//    }
-
-//    private class SendReceive extends Thread
-
-
-
-//    {
-//        private final BluetoothSocket bluetoothSocket;
-//        private final InputStream inputStream;
-//        private final OutputStream outputStream;
-//
-//        public SendReceive (BluetoothSocket socket)
-//        {
-//            bluetoothSocket=socket;
-//            InputStream tempIn=null;
-//            OutputStream tempOut=null;
-//
-//            try {
-//                tempIn=bluetoothSocket.getInputStream();
-//                tempOut=bluetoothSocket.getOutputStream();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//
-//            inputStream=tempIn;
-//            outputStream=tempOut;
-//        }
-//
-//        public void run()
-//        {
-//            byte[] buffer=new byte[8192];
-//            int bytes;
-//
-//            while (true)
-//            {
-//                try {
-//                    bytes=inputStream.read(buffer);
-//                    handler.obtainMessage(STATE_MESSAGE_RECEIVED,bytes,-1,buffer).sendToTarget();
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        }
-//
-//        public void write(byte[] bytes)
-//        {
-//            try {
-//                outputStream.write(bytes);
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//        }
-//    }
-//
-//    public void list(View view) {
-//
-//        Set<BluetoothDevice> bt=bluetoothAdapter.getBondedDevices();
-//        String[] strings=new String[bt.size()];
-//        btArray=new BluetoothDevice[bt.size()];
-//        int index=0;
-//
-//        if( bt.size()>0)
-//        {
-//            for(BluetoothDevice device : bt)
-//            {
-//                btArray[index]= device;
-//                strings[index]=device.getName();
-//                index++;
-//            }
-//
-//            ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(getApplicationContext(), R.layout.my_h, R.id.itemText,strings);
-//            listView.setAdapter(arrayAdapter);
-//        }
-//
-//        if (isUp) {
-//            slideDown_menu(menuView);
-//        } else {
-//            slideUp_menu(menuView);
-//        }
-//        isUp = !isUp;
-//
-//    }
-//
-//    // Menu Main Animation
-//    public void slideUp_menu(View view){
-//        view.setVisibility(View.VISIBLE);
-//        TranslateAnimation animate = new TranslateAnimation(
-//                600,
-//                0,
-//                view.getScaleX(),
-//                0);
-//        animate.setDuration(400);
-//        animate.setFillAfter(true);
-//        view.startAnimation(animate);
-//
-//
-//    }
-//
-//    public void slideDown_menu(View view){
-//        TranslateAnimation animate = new TranslateAnimation(
-//                0,
-//                -800,
-//                0,
-//                view.getScaleY());
-//        animate.setDuration(600);
-//        animate.setFillAfter(true);
-//        view.startAnimation(animate);
-//
-//        Handler handler=new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//
-//                menuView.setVisibility(View.GONE);
-//            }
-//        },1500);
-//    }
-//
-//
-//
-//    @Override
-//    public void onBackPressed() {
-//
-//        back_press++;
-//
-//        if (back_press == 2)
-//        {
-//            finish();
-//        }
-//
-//        ///// End Function
-//    }
-//}

@@ -40,14 +40,19 @@ import com.yourdomain.company.aimyhome.R;
 
 public class HomeFragment extends Fragment {
     LinearLayout livingRoom, diningRoom, bedRoom, bathRoom, livingRoomOn,livingRoomOff, diningRoomOn,diningRoomOff, bedRoomOn,bedRoomOff,bathRoomOn, bathRoomOff;
+    LivingRoomFragment livingRoomFragment;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        replaceFragment2(new LivingRoomFragment());
+        livingRoomFragment = new LivingRoomFragment();
+        replaceFragment2(livingRoomFragment);
+
     }
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        Log.d("Huy",  "onCreateView1");
         // Inflate the layout for this fragment
         super.onCreateView(inflater, container, savedInstanceState);
         final View view = inflater.inflate(R.layout.fragment_home,container,false);
